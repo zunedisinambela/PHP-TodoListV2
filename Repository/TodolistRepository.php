@@ -19,7 +19,8 @@ namespace Repository {
 
         function save(Todolist $todolist): void
         {
-            // Todo: Implement save() method
+            $number = sizeof($this->todolist) + 1;
+            $this->todolist[$number] = $todolist;
         }
 
         function remove(int $number): bool

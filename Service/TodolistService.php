@@ -2,6 +2,7 @@
 
 namespace Service {
 
+    use Entity\Todolist;
     use Repository\TodolistRepository;
 
     interface TodolistService
@@ -33,7 +34,9 @@ namespace Service {
 
         function addTodolist(string $todo): void
         {
-            // Todo: Implement addTodolist() method
+            $todolist = new Todolist($todo);
+            $this->todolistRepository->save($todolist);
+            echo "SUKSES MENAMBAHKAN TODOLIST" . PHP_EOL;
         }
 
         function removeTodolist(int $number): void
